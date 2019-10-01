@@ -184,5 +184,3 @@ document.onkeydown = function (e) {
         start.click();
     }
 };
-// register the handler 
-document.addEventListener('keydown', onkeydown, false);
