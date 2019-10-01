@@ -22,7 +22,7 @@ let sourceBuffer;
 const errorMsgElement = document.querySelector('span#errorMsg');
 const recordedVideo = document.querySelector('video#recorded');
 const recordButton = document.querySelector('button#record');
-recordButton.addEventListener('click', () => {
+recordButton.addEventListener('keydown', () => {
   if (recordButton.textContent === 'Start Recording') {
     startRecording();
     document.getElementById('gum').style.display = 'none';
