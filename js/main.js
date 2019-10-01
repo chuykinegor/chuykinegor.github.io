@@ -176,7 +176,7 @@ document.querySelector('button#start').addEventListener('click', async () => {
   await init(constraints);
 });
 
-var start = getElementById("record");
+var start = document.getElementById("record");
 
 document.onkeydown = function (e) {
     if (e.keyCode == 32) {
