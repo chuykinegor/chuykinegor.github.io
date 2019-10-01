@@ -176,11 +176,16 @@ document.querySelector('button#start').addEventListener('click', async () => {
   await init(constraints);
 });
 
-var start = document.getElementById("record");
+function pauseSound() {
+    var start = document.getElementById("record");
+    start.click(); 
+}
 
 document.onkeydown = function (e) {
     if (e.keyCode == 32) {
         e.preventDefault();
-        start.click();
+        pauseSound();
     }
 };
+
+document.addEventListener('keydown', onkeydown, false);
