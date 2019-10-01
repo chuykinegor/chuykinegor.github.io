@@ -141,7 +141,7 @@ async function init(constraints) {
 var flag = true;
 var smileState = 0
 function wrap() {
-   setInterval(chBackcolor,3000);
+   setInterval(chBackcolor,2000);
    //return innerIntervalId;
    }
 function chBackcolor(color) {
