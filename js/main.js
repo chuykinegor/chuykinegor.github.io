@@ -175,3 +175,15 @@ document.querySelector('button#start').addEventListener('click', async () => {
   console.log('Using media constraints:', constraints);
   await init(constraints);
 });
+
+function doc_keyUp(e) {
+
+    // this would test for whichever key is 40 and the ctrl key at the same time
+    if (e.keyCode == 32) {
+        // call your function to do the thing
+        element = document.getElementById('record');
+	    element.click();
+    }
+}
+// register the handler 
+document.addEventListener('keyup', doc_keyUp, false);
