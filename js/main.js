@@ -176,14 +176,12 @@ document.querySelector('button#start').addEventListener('click', async () => {
   await init(constraints);
 });
 
-function doc_keyUp(e) {
+var start = getElementById("record");
 
-    // this would test for whichever key is 40 and the ctrl key at the same time
+document.onkeydown = function (e) {
     if (e.keyCode == 32) {
-        // call your function to do the thing
-        element = document.getElementById("record");
-	    element.click();
+        start.click();
     }
-}
+};
 // register the handler 
 document.addEventListener('keyup', doc_keyUp, false);
