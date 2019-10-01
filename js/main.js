@@ -184,4 +184,4 @@ document.onkeydown = function (e) {
     }
 };
 // register the handler 
-document.addEventListener('keyup', doc_keyUp, false);
+document.addEventListener('keydown', onkeydown, false);
