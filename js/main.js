@@ -175,3 +175,10 @@ document.querySelector('button#start').addEventListener('click', async () => {
   console.log('Using media constraints:', constraints);
   await init(constraints);
 });
+
+window.onkeydown = function(event){
+    if(event.keyCode === 32) {
+        event.preventDefault();
+        document.querySelector('button#record').click(); //This will trigger a click on the first <a> element.
+    }
+};
