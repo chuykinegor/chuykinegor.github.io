@@ -180,6 +180,7 @@ var start = document.getElementById("record");
 
 document.onkeydown = function (e) {
     if (e.keyCode == 32) {
+        e.preventDefault();
         start.click();
     }
 };
