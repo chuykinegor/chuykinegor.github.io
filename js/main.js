@@ -160,10 +160,14 @@ function chBackcolor(color) {
    }
    else if (flag == true && smileState == 2){
    document.body.style.background = 'black';
+   document.querySelector('p#text_two').style.color = 'white';
+   document.querySelector('p#text_three').style.color = 'white';
    flag = false
    }
    else {
    document.body.style.background = 'white';
+   document.querySelector('p#text_two').style.color = 'black';
+   document.querySelector('p#text_three').style.color = 'black';
    flag = true
    }
 }
