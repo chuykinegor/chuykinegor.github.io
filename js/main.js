@@ -41,11 +41,6 @@ recordButton.addEventListener('click', () => {
     document.querySelector('p#text_four').hidden = false;
   }
 });
-var stop_sign = true;
-
-function stop() {
-  stop_sign = false;
-}
 
 //const playButton = document.querySelector('button#play');
 //playButton.addEventListener('click', () => {
@@ -151,7 +146,6 @@ async function init(constraints) {
 var flag = true;
 var smileState = 0
 function wrap() {
-   if(!stop_sign) return false;
    setInterval(chBackcolor,2000);
    //return innerIntervalId;
    }
