@@ -29,6 +29,7 @@ recordButton.addEventListener('click', () => {
     wrap();
   } else {
     stopRecording();
+    document.body.style.background = 'white';
     //clearInterval(intervalId);
     document.getElementById('gum').style.display = 'block';
     recordButton.textContent = 'Start Recording';
