@@ -5,6 +5,7 @@
  *  that can be found in the LICENSE file in the root of the source
  *  tree.
  */
+
  button {
   margin: 0 3px 10px 0;
   padding-left: 2px;
@@ -19,16 +20,6 @@ button:last-of-type {
 p.borderBelow {
   margin: 0 0 20px 0;
   padding: 0 0 20px 0;
-}
-
-p.text2 {
-  display: none;
-}
-p.text3 {
-  display: none;
-}
-p.text4 {
-  display: none;
 }
 
 video {

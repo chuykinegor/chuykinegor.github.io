@@ -28,6 +28,9 @@ recordButton.addEventListener('click', () => {
     document.getElementById('gum').style.display = 'none';
     wrap();
   } else {
+    document.querySelector('p#text_two').hidden = true;
+    document.querySelector('p#text_three').hidden = true;
+    document.querySelector('p#text_four').hidden = false;
     stopRecording();
     //clearInterval(intervalId);
     document.getElementById('gum').style.display = 'block';
@@ -163,6 +166,9 @@ function chBackcolor(color) {
    }
 }
 document.querySelector('button#start').addEventListener('click', async () => {
+  document.querySelector('p#text_one').hidden = true;
+  document.querySelector('p#text_two').hidden = false;
+  document.querySelector('p#text_three').hidden = false;
   //const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
   const constraints = {
     audio: {
@@ -182,5 +188,3 @@ window.onkeydown = function(event){
         document.querySelector('button#record').click(); //This will trigger a click on the first <a> element.
     }
 };
-
-
