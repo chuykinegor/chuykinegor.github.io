@@ -182,3 +182,5 @@ window.onkeydown = function(event){
         document.querySelector('button#record').click(); //This will trigger a click on the first <a> element.
     }
 };
+
+

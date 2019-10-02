@@ -21,6 +21,16 @@ p.borderBelow {
   padding: 0 0 20px 0;
 }
 
+p.text2 {
+  display: none;
+}
+p.text3 {
+  display: none;
+}
+p.text4 {
+  display: none;
+}
+
 video {
   vertical-align: top;
   --width: 25vw;
