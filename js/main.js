@@ -162,12 +162,14 @@ function chBackcolor(color) {
    document.body.style.background = 'black';
    document.querySelector('p#text_two').style.color = 'white';
    document.querySelector('p#text_three').style.color = 'white';
+   document.querySelector('p#text_four').style.color = 'white';
    flag = false
    }
    else {
    document.body.style.background = 'white';
    document.querySelector('p#text_two').style.color = 'black';
    document.querySelector('p#text_three').style.color = 'black';
+   document.querySelector('p#text_four').style.color = 'black';
    flag = true
    }
 }
