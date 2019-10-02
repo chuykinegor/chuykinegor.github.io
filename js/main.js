@@ -28,15 +28,15 @@ recordButton.addEventListener('click', () => {
     document.getElementById('gum').style.display = 'none';
     wrap();
   } else {
-    document.querySelector('p#text_two').hidden = true;
-    document.querySelector('p#text_three').hidden = true;
-    document.querySelector('p#text_four').hidden = false;
     stopRecording();
     //clearInterval(intervalId);
     document.getElementById('gum').style.display = 'block';
     recordButton.textContent = 'Start Recording';
     //playButton.disabled = false;
     downloadButton.disabled = false;
+    document.querySelector('p#text_two').hidden = true;
+    document.querySelector('p#text_three').hidden = true;
+    document.querySelector('p#text_four').hidden = false;
   }
 });
 
