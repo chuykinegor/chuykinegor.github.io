@@ -8,6 +8,9 @@
 -->
 <html>
 <head>
+    <!-- include adapter for srcObject shim -->
+
+    
 
     <meta charset="utf-8">
     <meta name="description" content="WebRTC code samples">
@@ -41,21 +44,25 @@
             title="W3C MediaStream Recording API Editor's Draft">Editor's&nbsp;Draft</a>.</p>-->
 
 
-    <p id="text_one">Нажмите на кнопку "Start camera". Браузер запросит доступ к вебкамере –  дайте ему доступ.</p>
-    <p id="text_two", hidden="true">Расположите своё лицо так, чтобы оно полностью попадало в кадр и занимало бОльшую часть кадра. Дальнейшие действия следует выполнять, сохраняя положение лица в кадре.</p>
-    <p id="text_three", hidden="true">Нажмите кнопку "Start Recording". По её нажатии окно предпросмотра камеры исчезнет. Смотрите в камеру прямо. Затем, когда цвет экрана сменится на оливковый - улыбнитесь. Когда он станет чёрным или белым - переставайте улыбаться и подождите, пока экран несколько раз сменит цвет с чёрного на белый и наоборот. После этого нажмите на кнопку "Stop Recording".</p>
-    <p id="text_four", hidden="true">Кнопка “Download” стала активна - нажмите её, и к Вам на компьютер загрузится файл с названием test. Прикрепите его к заданию.</p>
+    <p id="text_one">Нажмите на кнопку "Start camera". Браузер запросит доступ к вебкамере – дайте ему доступ.</p>
+    <p id="text_two", hidden="true">Нажмите на кнопку Draw box, на видео должна появиться красная рамка. Расположите в ней лицо так, как показано в инструкции. <font color="red">Далее не двигайте головой и смотрите прямо в камеру.</font></p>
+    <p id="text_three", hidden="true">Нажмите кнопку "Start Recording". После нажатия окно предпросмотра камеры исчезнет. Смотрите в камеру прямо, пока экран несколько раз сменит цвет с чёрного на белый и наоборот. После этого нажмите на кнопку "Stop Recording".</p>
+    <p id="text_four", hidden="true">Кнопка “Download” стала активна - нажмите её, и к Вам на компьютер загрузится файл с названием test. Прикрепите его к заданию. Если у Вас что-то не получилось, закройте вкладку браузера или сам браузер и откройте снова.</p>
     
 
     <div>
         <button id="start">Start camera</button>
+        <button id="getPlayerCoords">Draw box</button>
         <button id="record" disabled>Start Recording</button>
         <!--<button id="play" disabled>Play</button>-->
         <button id="download" disabled>Download</button>
     </div>
-
+	
+    <canvas id="videoCanvas"></canvas>
     <video id="gum" playsinline autoplay muted></video>
-    <video id="recorded" playsinline loop></video>
+	
+    <!--<video id="recorded" playsinline loop></video>-->
+	
 
 
 <!--    <div>
@@ -71,11 +78,11 @@
        title="View source for this page on GitHub" id="viewSource">View source on GitHub</a> -->
 
 </div>
+    <script  src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="js/main.js"></script>
+    <script src="../../../js/lib/ga.js"></script>
 
-<!-- include adapter for srcObject shim -->
-<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-<script src="js/main.js" async></script>
-<script src="../../../js/lib/ga.js"></script>
 
 </body>
 </html>

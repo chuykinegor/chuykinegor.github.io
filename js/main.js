@@ -22,10 +22,32 @@ let sourceBuffer;
 const errorMsgElement = document.querySelector('span#errorMsg');
 const recordedVideo = document.querySelector('video#recorded');
 const recordButton = document.querySelector('button#record');
+const coordsButton = document.querySelector('button#getPlayerCoords')
+const videoPlayer = document.querySelector('video#gum');
+
+
+
+//coordsButton.addEventListener('click', () => {
+//	var rect = videoPlayer.getBoundingClientRect();
+//	console.log(rect.top, rect.right, rect.bottom, rect.left);
+//	var c = document.getElementById("videoCanvas");
+//	c.width = 1280;
+//	c.height = 720
+//	var video = document.getElementById('gum')
+//	var ctx = c.getContext("2d");
+//		ctx.drawImage(video, 0, 0);
+//		ctx.beginPath();
+//		ctx.lineWidth = "6";
+//		ctx.strokeStyle = "red";
+//		ctx.rect(460, 200, 400, 400);
+//		ctx.stroke();
+//	});
+
 recordButton.addEventListener('click', () => {
   if (recordButton.textContent === 'Start Recording') {
     startRecording();
     document.getElementById('gum').style.display = 'none';
+	document.getElementById('videoCanvas').style.display = 'none';
     wrap();
   } else {
     stopRecording();
@@ -144,21 +166,22 @@ async function init(constraints) {
 }
 
 var flag = true;
-var smileState = 0
+//var smileState = 0
 function wrap() {
    setInterval(chBackcolor,2000);
    //return innerIntervalId;
    }
 function chBackcolor(color) {
-   if (flag == true && smileState == 0) {
-      document.body.style.background = 'white';
-      smileState = 1;
-   }
-   else if (flag == true && smileState == 1){
-      document.body.style.background = 'darkolivegreen';
-	  smileState = 2;
-   }
-   else if (flag == true && smileState == 2){
+//   if (flag == true && smileState == 0) {
+//      document.body.style.background = 'white';
+//      smileState = 1;
+//   }
+//   else if (flag == true && smileState == 1){
+//      document.body.style.background = 'darkolivegreen';
+//	  smileState = 2;
+//   }
+//   else if (flag == true && smileState == 2){
+   if (flag == true) {
    document.body.style.background = 'black';
    document.querySelector('p#text_two').style.color = 'white';
    document.querySelector('p#text_three').style.color = 'white';
@@ -188,6 +211,7 @@ document.querySelector('button#start').addEventListener('click', async () => {
   };
   console.log('Using media constraints:', constraints);
   await init(constraints);
+  
 });
 
 window.onkeydown = function(event){
@@ -196,3 +220,37 @@ window.onkeydown = function(event){
         document.querySelector('button#record').click(); //This will trigger a click on the first <a> element.
     }
 };
+
+window.onkeydown = function(event){
+    if(event.keyCode === 83) {
+        event.preventDefault();
+        document.querySelector('button#getPlayerCoords').click(); //This will trigger a click on the first <a> element.
+    }
+};
+
+$(function() {
+  var canvas = document.getElementById('videoCanvas');
+  var ctx = canvas.getContext('2d');
+  var video = document.getElementById('gum');
+  var rect = videoPlayer.getBoundingClientRect();
+  coordsButton.addEventListener('click', function() {
+    var $this = video; //cache
+	canvas.width = 1280;
+	canvas.height = 720;
+	console.log(rect.top, rect.right, rect.bottom, rect.left);
+    (function loop() {
+      if (!$this.paused && !$this.ended) {
+        ctx.drawImage($this, 0, 0);
+
+		ctx.beginPath();
+		ctx.lineWidth = "6";
+		ctx.strokeStyle = "red";
+		//ctx.rect(384, 90, 512, 540);
+		//ctx.rect(486.4, 144, 307.2, 432); 
+		ctx.rect(448, 120, 384, 510); //big frame
+		ctx.stroke();
+        setTimeout(loop, 1000 / 30); // drawing at 30fps
+      }
+    })();
+  }, 0);
+});
